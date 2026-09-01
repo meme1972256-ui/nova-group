@@ -1,306 +1,286 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>تواصل معنا | NOVA Group</title>
 
+    <meta name="description" content="تواصل مع NOVA Group للاستفسارات والخدمات والمشاريع.">
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 18px;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 20px auto 80px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            margin-top: 0;
+        }
+
+        .info-item {
+            margin: 25px 0;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            background: #111827;
+            color: white;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="header">
+<header>
+    <nav>
+        <div class="logo">NOVA Group</div>
 
-    <div class="container nav">
-
-        <a href="index.html" class="logo">
-            NOVA<span>.</span>
-        </a>
-
-        <nav>
+        <div>
             <a href="index.html">الرئيسية</a>
             <a href="about.html">من نحن</a>
             <a href="services.html">خدماتنا</a>
             <a href="projects.html">مشاريعنا</a>
             <a href="news.html">الأخبار</a>
             <a href="contact.html">تواصل معنا</a>
-        </nav>
-
-        <a href="contact.html" class="nav-button">
-            ابدأ مشروعك
-        </a>
-
-    </div>
-
+        </div>
+    </nav>
 </header>
 
-
-<main>
-
 <section class="hero">
-
-    <div class="container hero-text">
-
-        <span class="small-title">
-            NOVA GROUP
-        </span>
-
-        <h1>
-            تواصل معنا
-            <span>نحن هنا لمساعدتك</span>
-        </h1>
-
-        <p>
-            أرسل لنا رسالتك وسنقوم بالرد عليك في أقرب وقت.
-        </p>
-
-    </div>
-
+    <h1>تواصل معنا</h1>
+    <p>يسعدنا استقبال استفساراتك ورسائلك</p>
 </section>
 
+<main class="contact-container">
 
-<section class="section">
+    <section class="contact-info">
 
-    <div class="container contact-grid">
+        <h2>معلومات التواصل</h2>
 
-
-        <div>
-
-            <span class="section-label">
-                معلومات التواصل
-            </span>
-
-            <h2>
-                يسعدنا سماعك
-            </h2>
-
-            <p>
-                يمكنك التواصل معنا من خلال الهاتف أو البريد
-                الإلكتروني أو زيارة مقر الشركة.
-            </p>
-
-
-            <div class="contact-info">
-
-                <div>
-                    <span>الهاتف</span>
-                    <strong>+218 92 1728119</strong>
-                </div>
-
-                <div>
-                    <span>البريد الإلكتروني</span>
-                    <strong>info3@novagroup.example</strong>
-                </div>
-
-                <div>
-                    <span>العنوان</span>
-                    <strong>طرابلس، ليبيا</strong>
-                </div>
-
-                <div>
-                    <span>ساعات العمل</span>
-                    <strong>الأحد - الخميس | 9:00 - 17:00</strong>
-                </div>
-
-            </div>
-
+        <div class="info-item">
+            <strong>البريد الإلكتروني</strong>
+            <span>meme1972256@gmail.com</span>
         </div>
 
-
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/myeykzqj" method="POST">
-
-            <div class="form-group">
-
-                <label>
-                    الاسم
-                </label>
-
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="اكتب اسمك"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    رقم الهاتف
-                </label>
-
-                <input
-                    type="tel"
-                    placeholder="اكتب رقم هاتفك"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    البريد الإلكتروني
-                </label>
-
-                <input
-                    type="email"
-                    name="name"
-                    placeholder="example@email.com"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    رسالتك
-                </label>
-
-                <textarea name="message">
-                    placeholder="اكتب رسالتك هنا..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="button primary">
-                إرسال الرسالة
-            </button>
-
-
-            <div
-                id="formMessage"
-                class="form-message">
-            </div>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<section class="section testimonials">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-label">
-                الأسئلة الشائعة
-            </span>
-
-            <h2>
-                قبل أن تتواصل معنا
-            </h2>
-
+        <div class="info-item">
+            <strong>الشركة</strong>
+            <span>NOVA Group</span>
         </div>
 
-
-        <div class="faq">
-
-            <div class="faq-item">
-
-                <div class="faq-question">
-                    كيف أطلب خدمة؟
-                    <span>+</span>
-                </div>
-
-                <div class="faq-answer">
-                    أرسل لنا تفاصيل مشروعك من خلال نموذج التواصل
-                    وسيتواصل معك الفريق.
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <div class="faq-question">
-                    كم يستغرق الرد؟
-                    <span>+</span>
-                </div>
-
-                <div class="faq-answer">
-                    يمكن ان يستغرق الرد من 1ساعة الي 7 ساعة.
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <div class="faq-question">
-                    هل البيانات الحالية حقيقية؟
-                    <span>+</span>
-                </div>
-
-                <div class="faq-answer">
-                    نعم، البيانات حقيقية يمكنك تائكد عن طريق 
-                     طريق ارقام الهاتف او البريد الاكتروني.
-                </div>
-
-            </div>
-
+        <div class="info-item">
+            <strong>الاستفسارات</strong>
+            <span>للاستفسار عن خدماتنا أو مشاريعنا، أرسل لنا رسالة من النموذج.</span>
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- نموذج التواصل -->
+    <form
+        class="contact-form"
+        id="contactForm"
+        action="https://formspree.io/f/myeykzqj"
+        method="POST"
+    >
+
+        <h2>أرسل رسالة</h2>
+
+        <div class="form-group">
+            <label for="name">الاسم</label>
+
+            <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="اكتب اسمك"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+
+            <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="example@email.com"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="subject">الموضوع</label>
+
+            <input
+                id="subject"
+                type="text"
+                name="subject"
+                placeholder="موضوع الرسالة"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="message">الرسالة</label>
+
+            <textarea
+                id="message"
+                name="message"
+                placeholder="اكتب رسالتك هنا..."
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit">
+            إرسال الرسالة
+        </button>
+
+    </form>
 
 </main>
 
-
 <footer>
-
-    <div class="container footer">
-
-        <div>
-
-            <a href="index.html" class="logo">
-                NOVA<span>.</span>
-            </a>
-
-            <p>
-                حلول أعمال احترافية.
-            </p>
-
-        </div>
-
-        <div class="footer-links">
-
-            <a href="index.html">الرئيسية</a>
-            <a href="about.html">من نحن</a>
-            <a href="services.html">خدماتنا</a>
-            <a href="projects.html">مشاريعنا</a>
-            <a href="news.html">الأخبار</a>
-            <a href="contact.html">تواصل معنا</a>
-
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 NOVA Group - جميع الحقوق محفوظة
-    </div>
-
+    © 2026 NOVA Group - جميع الحقوق محفوظة
 </footer>
 
-
-<script src="script.js"></script>
-
 </body>
-
 </html>
