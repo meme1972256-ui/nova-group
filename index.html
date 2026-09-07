@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>تسجيل الدخول</title>
 
 <style>
@@ -22,16 +23,15 @@ body{
 body{
     background:#fff;
     font-family:Arial,sans-serif;
-    position:fixed;
-    inset:0;
-    touch-action:none;
 }
 
+/* الصفحة */
 .page{
     width:100%;
-    height:100vh;
     height:100dvh;
     padding:12px 34px;
+    display:flex;
+    flex-direction:column;
     overflow:hidden;
 }
 
@@ -40,27 +40,27 @@ body{
     text-align:center;
     color:#777;
     font-size:15px;
-    margin-bottom:120px;
+    margin-bottom:55px;
 }
 
 /* الشعار */
 .logo{
-    width:75px;
-    height:75px;
+    width:70px;
+    height:70px;
     display:block;
-    margin:0 auto 170px;
+    margin:0 auto 55px;
 }
 
 /* الحقول */
 input{
     width:100%;
-    height:55px;
+    height:50px;
     border:1px solid #ddd;
     border-radius:22px;
     padding:0 16px;
-    font-size:15px;
+    font-size:14px;
     text-align:right;
-    margin-bottom:12px;
+    margin-bottom:10px;
     outline:none;
     background:#fff;
 }
@@ -72,64 +72,61 @@ input:focus{
 /* تسجيل الدخول */
 .login{
     width:100%;
-    height:48px;
+    height:46px;
     border:0;
     border-radius:25px;
     background:#0877e8;
     color:white;
-    font-size:17px;
+    font-size:16px;
     cursor:pointer;
-}
-
-.login:active{
-    opacity:.8;
 }
 
 /* نسيت كلمة السر */
 .forgot{
     text-align:center;
-    font-size:15px;
-    margin-top:25px;
+    font-size:14px;
+    margin-top:18px;
     cursor:pointer;
+}
+
+/* المساحة الوسطى */
+.middle{
+    flex:1;
 }
 
 /* إنشاء حساب */
 .create{
     width:100%;
-    height:48px;
+    height:46px;
     border:1px solid #0877e8;
     border-radius:25px;
     background:white;
     color:#0877e8;
-    font-size:17px;
-    margin-top:280px;
+    font-size:16px;
     cursor:pointer;
-}
-
-.create:active{
-    opacity:.8;
-}
-
-/* الرسائل */
-.message{
-    display:none;
-    text-align:center;
-    margin-top:15px;
-    font-size:14px;
 }
 
 /* Meta */
 .meta{
     text-align:center;
-    margin-top:20px;
-    font-size:18px;
+    margin-top:16px;
+    font-size:17px;
     color:#303846;
+    margin-bottom:5px;
 }
 
 .meta-logo{
     color:#0877e8;
-    font-size:23px;
+    font-size:22px;
     font-weight:bold;
+}
+
+/* الرسالة */
+.message{
+    display:none;
+    text-align:center;
+    margin-top:10px;
+    font-size:13px;
 }
 </style>
 </head>
@@ -138,9 +135,11 @@ input:focus{
 
 <div class="page">
 
+    <!-- اللغة -->
     <div class="language">
         العربية
     </div>
+
 
     <!-- الشعار -->
     <svg class="logo" viewBox="0 0 120 120">
@@ -159,58 +158,94 @@ input:focus{
             </linearGradient>
         </defs>
 
-        <rect x="15" y="15"
-              width="90" height="90"
-              rx="25"
-              fill="none"
-              stroke="url(#ig)"
-              stroke-width="9"/>
+        <rect
+            x="15"
+            y="15"
+            width="90"
+            height="90"
+            rx="25"
+            fill="none"
+            stroke="url(#ig)"
+            stroke-width="9"/>
 
-        <circle cx="60" cy="60"
-                r="22"
-                fill="none"
-                stroke="url(#ig)"
-                stroke-width="9"/>
+        <circle
+            cx="60"
+            cy="60"
+            r="22"
+            fill="none"
+            stroke="url(#ig)"
+            stroke-width="9"/>
 
-        <circle cx="86" cy="34"
-                r="6"
-                fill="url(#ig)"/>
+        <circle
+            cx="86"
+            cy="34"
+            r="6"
+            fill="url(#ig)"/>
 
     </svg>
 
 
+    <!-- اسم المستخدم -->
     <input
         id="username"
         type="text"
         placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
 
 
+    <!-- كلمة السر -->
     <input
         id="password"
         type="password"
         placeholder="كلمة السر">
 
 
-    <button class="login" onclick="login()">
+    <!-- تسجيل الدخول -->
+    <button
+        class="login"
+        onclick="login()">
+
         تسجيل الدخول
+
     </button>
 
 
-    <div class="forgot" onclick="forgotPassword()">
+    <!-- نسيت كلمة السر -->
+    <div
+        class="forgot"
+        onclick="forgotPassword()">
+
         هل نسيت كلمة السر؟
+
     </div>
 
 
-    <div id="message" class="message"></div>
+    <!-- الرسالة -->
+    <div
+        id="message"
+        class="message">
+    </div>
 
 
-    <button class="create" onclick="createAccount()">
+    <!-- هذه المساحة تدفع الجزء السفلي للأسفل -->
+    <div class="middle"></div>
+
+
+    <!-- إنشاء حساب -->
+    <button
+        class="create"
+        onclick="createAccount()">
+
         إنشاء حساب جديد
+
     </button>
 
 
+    <!-- Meta -->
     <div class="meta">
-        <span class="meta-logo">∞</span> Meta
+
+        <span class="meta-logo">∞</span>
+        Meta
+
     </div>
 
 </div>
@@ -256,7 +291,6 @@ function login(){
 
     message.textContent =
         "جاري تسجيل الدخول...";
-
 }
 
 
@@ -269,7 +303,6 @@ function forgotPassword(){
 
     message.textContent =
         "سيتم فتح صفحة استعادة كلمة السر";
-
 }
 
 
