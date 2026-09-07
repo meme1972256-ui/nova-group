@@ -1,95 +1,109 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        body {
-            margin: 0;
-            background: white;
-            font-family: Arial, sans-serif;
-        }
+body{
+    margin:0;
+    background:#fff;
+    font-family:Arial,sans-serif;
+}
 
-        .page {
-            width: 100%;
-            min-height: 100vh;
-            padding: 35px;
-        }
+.page{
+    width:100%;
+    min-height:100vh;
+    padding:12px 34px;
+}
 
-        /* العربية */
-        .language {
-            text-align: center;
-            color: #777;
-            font-size: 24px;
-            margin-bottom: 150px;
-        }
+.language{
+    text-align:center;
+    color:#777;
+    font-size:15px;
+    margin-bottom:120px;
+}
 
-        /* الشعار */
-        .logo {
-            width: 125px;
-            height: 125px;
-            display: block;
-            margin: 0 auto 180px;
-        }
+.logo{
+    width:75px;
+    height:75px;
+    display:block;
+    margin:0 auto 170px;
+}
 
-        /* الخانات */
-        input {
-            width: 100%;
-            height: 135px;
-            border: 1px solid #ddd;
-            border-radius: 35px;
-            padding: 0 30px;
-            font-size: 24px;
-            text-align: right;
-            margin-bottom: 25px;
-            outline: none;
-        }
+input{
+    width:100%;
+    height:55px;
+    border:1px solid #ddd;
+    border-radius:22px;
+    padding:0 16px;
+    font-size:15px;
+    text-align:right;
+    margin-bottom:12px;
+    outline:none;
+}
 
-        /* زر الدخول */
-        .login {
-            width: 100%;
-            height: 95px;
-            border: none;
-            border-radius: 50px;
-            background: #0877e8;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
+input:focus{
+    border-color:#aaa;
+}
 
-        /* نسيت كلمة السر */
-        .forgot {
-            text-align: center;
-            font-size: 23px;
-            margin-top: 45px;
-        }
+.login{
+    width:100%;
+    height:48px;
+    border:0;
+    border-radius:25px;
+    background:#0877e8;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
 
-        /* إنشاء حساب */
-        .create {
-            width: 100%;
-            height: 90px;
-            border: 2px solid #0877e8;
-            border-radius: 50px;
-            background: white;
-            color: #0877e8;
-            font-size: 27px;
-            margin-top: 330px;
-        }
+.login:active{
+    opacity:.8;
+}
 
-        /* Meta */
-        .meta {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 30px;
-            color: #303846;
-        }
-    </style>
+.forgot{
+    text-align:center;
+    font-size:15px;
+    margin-top:25px;
+    cursor:pointer;
+}
+
+.create{
+    width:100%;
+    height:48px;
+    border:1px solid #0877e8;
+    border-radius:25px;
+    background:white;
+    color:#0877e8;
+    font-size:17px;
+    margin-top:280px;
+    cursor:pointer;
+}
+
+.message{
+    display:none;
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.meta{
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+    color:#303846;
+}
+
+.meta-logo{
+    color:#0877e8;
+    font-size:23px;
+    font-weight:bold;
+}
+</style>
 </head>
 
 <body>
@@ -98,13 +112,12 @@
 
     <div class="language">العربية</div>
 
-    <!-- شعار Instagram -->
-    <svg class="logo"
-         viewBox="0 0 120 120"
-         xmlns="http://www.w3.org/2000/svg">
-
+    <!-- الشعار -->
+    <svg class="logo" viewBox="0 0 120 120">
         <defs>
-            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+            <linearGradient id="ig"
+                x1="0%" y1="100%"
+                x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#FFD600"/>
                 <stop offset="25%" stop-color="#FF7A00"/>
                 <stop offset="50%" stop-color="#FF0069"/>
@@ -114,8 +127,7 @@
         </defs>
 
         <rect x="15" y="15"
-              width="90"
-              height="90"
+              width="90" height="90"
               rx="25"
               fill="none"
               stroke="url(#ig)"
@@ -127,37 +139,87 @@
                 stroke="url(#ig)"
                 stroke-width="9"/>
 
-        <circle cx="86"
-                cy="34"
+        <circle cx="86" cy="34"
                 r="6"
                 fill="url(#ig)"/>
     </svg>
 
-    <input
-        type="text"
-        placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
+    <input id="username"
+           type="text"
+           placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
 
-    <input
-        type="password"
-        placeholder="كلمة السر">
+    <input id="password"
+           type="password"
+           placeholder="كلمة السر">
 
-    <button class="login">
+    <button class="login" onclick="login()">
         تسجيل الدخول
     </button>
 
-    <div class="forgot">
+    <div class="forgot" onclick="forgotPassword()">
         هل نسيت كلمة السر؟
     </div>
 
-    <button class="create">
+    <div id="message" class="message"></div>
+
+    <button class="create" onclick="createAccount()">
         إنشاء حساب جديد
     </button>
 
     <div class="meta">
-        <b>∞ Meta</b>
+        <span class="meta-logo">∞</span> Meta
     </div>
 
 </div>
+
+<script>
+
+function login(){
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+    if(username === ""){
+        message.style.display = "block";
+        message.textContent = "اكتب اسم المستخدم أو البريد الإلكتروني";
+        return;
+    }
+
+    if(password === ""){
+        message.style.display = "block";
+        message.textContent = "اكتب كلمة السر";
+        return;
+    }
+
+    message.style.display = "block";
+    message.textContent = "جاري تسجيل الدخول...";
+
+    // هنا تربط Backend لاحقًا
+}
+
+function forgotPassword(){
+
+    const message =
+        document.getElementById("message");
+
+    message.style.display = "block";
+    message.textContent =
+        "سيتم فتح صفحة استعادة كلمة السر";
+}
+
+function createAccount(){
+
+    window.location.href = "signup.html";
+
+}
+
+</script>
 
 </body>
 </html>
