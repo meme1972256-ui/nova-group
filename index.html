@@ -6,20 +6,36 @@
 <title>تسجيل الدخول</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
 
 body{
-    margin:0;
     background:#fff;
     font-family:Arial,sans-serif;
+    position:fixed;
+    inset:0;
+    touch-action:none;
 }
 
 .page{
     width:100%;
-    min-height:auto;
+    height:100vh;
+    height:100dvh;
     padding:12px 34px;
+    overflow:hidden;
 }
 
+/* العربية */
 .language{
     text-align:center;
     color:#777;
@@ -27,6 +43,7 @@ body{
     margin-bottom:120px;
 }
 
+/* الشعار */
 .logo{
     width:75px;
     height:75px;
@@ -34,6 +51,7 @@ body{
     margin:0 auto 170px;
 }
 
+/* الحقول */
 input{
     width:100%;
     height:55px;
@@ -44,12 +62,14 @@ input{
     text-align:right;
     margin-bottom:12px;
     outline:none;
+    background:#fff;
 }
 
 input:focus{
     border-color:#aaa;
 }
 
+/* تسجيل الدخول */
 .login{
     width:100%;
     height:48px;
@@ -65,6 +85,7 @@ input:focus{
     opacity:.8;
 }
 
+/* نسيت كلمة السر */
 .forgot{
     text-align:center;
     font-size:15px;
@@ -72,6 +93,7 @@ input:focus{
     cursor:pointer;
 }
 
+/* إنشاء حساب */
 .create{
     width:100%;
     height:48px;
@@ -84,6 +106,11 @@ input:focus{
     cursor:pointer;
 }
 
+.create:active{
+    opacity:.8;
+}
+
+/* الرسائل */
 .message{
     display:none;
     text-align:center;
@@ -91,6 +118,7 @@ input:focus{
     font-size:14px;
 }
 
+/* Meta */
 .meta{
     text-align:center;
     margin-top:20px;
@@ -110,19 +138,24 @@ input:focus{
 
 <div class="page">
 
-    <div class="language">العربية</div>
+    <div class="language">
+        العربية
+    </div>
 
     <!-- الشعار -->
     <svg class="logo" viewBox="0 0 120 120">
+
         <defs>
             <linearGradient id="ig"
                 x1="0%" y1="100%"
                 x2="100%" y2="0%">
+
                 <stop offset="0%" stop-color="#FFD600"/>
                 <stop offset="25%" stop-color="#FF7A00"/>
                 <stop offset="50%" stop-color="#FF0069"/>
                 <stop offset="75%" stop-color="#D300C5"/>
                 <stop offset="100%" stop-color="#7638FA"/>
+
             </linearGradient>
         </defs>
 
@@ -142,35 +175,46 @@ input:focus{
         <circle cx="86" cy="34"
                 r="6"
                 fill="url(#ig)"/>
+
     </svg>
 
-    <input id="username"
-           type="text"
-           placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
 
-    <input id="password"
-           type="password"
-           placeholder="كلمة السر">
+    <input
+        id="username"
+        type="text"
+        placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
+
+
+    <input
+        id="password"
+        type="password"
+        placeholder="كلمة السر">
+
 
     <button class="login" onclick="login()">
         تسجيل الدخول
     </button>
 
+
     <div class="forgot" onclick="forgotPassword()">
         هل نسيت كلمة السر؟
     </div>
 
+
     <div id="message" class="message"></div>
+
 
     <button class="create" onclick="createAccount()">
         إنشاء حساب جديد
     </button>
+
 
     <div class="meta">
         <span class="meta-logo">∞</span> Meta
     </div>
 
 </div>
+
 
 <script>
 
@@ -185,23 +229,36 @@ function login(){
     const message =
         document.getElementById("message");
 
+
     if(username === ""){
+
         message.style.display = "block";
-        message.textContent = "اكتب اسم المستخدم أو البريد الإلكتروني";
+
+        message.textContent =
+            "اكتب اسم المستخدم أو البريد الإلكتروني";
+
         return;
     }
+
 
     if(password === ""){
+
         message.style.display = "block";
-        message.textContent = "اكتب كلمة السر";
+
+        message.textContent =
+            "اكتب كلمة السر";
+
         return;
     }
 
-    message.style.display = "block";
-    message.textContent = "جاري تسجيل الدخول...";
 
-    // هنا تربط Backend لاحقًا
+    message.style.display = "block";
+
+    message.textContent =
+        "جاري تسجيل الدخول...";
+
 }
+
 
 function forgotPassword(){
 
@@ -209,13 +266,17 @@ function forgotPassword(){
         document.getElementById("message");
 
     message.style.display = "block";
+
     message.textContent =
         "سيتم فتح صفحة استعادة كلمة السر";
+
 }
+
 
 function createAccount(){
 
-    window.location.href = "signup.html";
+    window.location.href =
+        "signup.html";
 
 }
 
