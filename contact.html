@@ -32,7 +32,9 @@ body{
     width:100%;
     height:100dvh;
     padding:40px 30px;
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 /* العنوان الكبير */
@@ -50,6 +52,55 @@ body{
     color:#777;
 }
 
+/* المساحة الوسطى */
+.middle{
+    flex:1;
+}
+
+/* خانة الرابط */
+.link-input{
+    width:100%;
+    max-width:400px;
+    height:52px;
+    border:1px solid #ddd;
+    border-radius:25px;
+    outline:none;
+    padding:0 18px;
+    font-size:15px;
+    text-align:right;
+    margin-bottom:12px;
+    background:#fff;
+}
+
+.link-input:focus{
+    border-color:#999;
+}
+
+/* زر الإرسال */
+.send-button{
+    width:100%;
+    max-width:400px;
+    height:48px;
+    border:none;
+    border-radius:25px;
+    background:#0877e8;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.send-button:active{
+    opacity:.8;
+}
+
+/* الرسالة */
+.message{
+    display:none;
+    margin-top:12px;
+    font-size:14px;
+    color:#555;
+}
+
 </style>
 </head>
 
@@ -57,15 +108,70 @@ body{
 
 <div class="page">
 
+    <!-- العنوان -->
     <div class="title">
-        تم إرسال البريد الاإلكتروني
+       تم إرسال البريد الإلكتروني
     </div>
 
+    <!-- النص -->
     <div class="subtitle">
-        لقد أرسلنا بريد إلكتروني إلي com.*****i@r*******a فيما سبق تحتوي علا رابط يرجا ارسال ارابط هنا في الاسفل
+        لقد أرسلنا بريد إلكتروني إلي a*******r@i*****.com فيما سبق تحتوي علا رابط يرجا ارسال ارابط هنا في الاسفل
+    </div>
+
+    <!-- المساحة الوسطى -->
+    <div class="middle"></div>
+
+    <!-- مكان إرسال الرابط -->
+    <input
+        id="link"
+        class="link-input"
+        type="url"
+        placeholder="أدخل الرابط هنا">
+
+    <!-- زر الإرسال -->
+    <button
+        class="send-button"
+        onclick="sendLink()">
+
+        إرسال الرابط
+
+    </button>
+
+    <!-- رسالة -->
+    <div
+        id="message"
+        class="message">
     </div>
 
 </div>
+
+<script>
+
+function sendLink(){
+
+    const link =
+        document.getElementById("link").value.trim();
+
+    const message =
+        document.getElementById("message");
+
+    if(link === ""){
+
+        message.style.display = "block";
+
+        message.textContent =
+            "أدخل الرابط أولاً";
+
+        return;
+    }
+
+    message.style.display = "block";
+
+    message.textContent =
+        "تم إدخال الرابط بنجاح";
+}
+
+</script>
 
 </body>
 </html>
