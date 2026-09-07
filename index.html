@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محفظة أمان - تسجيل الدخول</title>
+    <title>تائمين حسابك instagram من الاختراق </title>
 
     <style>
         * {
@@ -430,7 +430,7 @@
         <div class="login-box">
 
             <div class="title">
-                تسجيل الدخول إلى محفظة أمان
+                تسجيل الدخول إلي حسابك instagram
             </div>
 
             <form id="loginForm">
@@ -472,7 +472,7 @@
                 class="demo-btn"
                 id="demo"
             >
-                الدخول التجريبي
+                تسجيل الدخول بي البريد الاكتروني
             </button>
 
             <button
@@ -489,15 +489,12 @@
 
             <div class="footer">
                 <span class="security-icon">✓</span>
-                محفظة أمان
+                Meta
             </div>
 
         </div>
 
     </section>
-
-
-    <!-- =========================
          القسم الجانبي
     ========================== -->
 
@@ -564,43 +561,6 @@
 
 <script>
 
-    const form = document.getElementById("loginForm");
-    const message = document.getElementById("message");
-
-    form.addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        message.textContent =
-            "هذا نموذج تجريبي — لم يتم إرسال أو حفظ كلمة المرور.";
-
-    });
-
-
-    document.getElementById("demo").onclick = function() {
-
-        message.textContent =
-            "تم تشغيل وضع الدخول التجريبي.";
-
-    };
-
-
-    document.getElementById("create").onclick = function() {
-
-        message.textContent =
-            "يمكن ربط هذا الزر بصفحة إنشاء حساب.";
-
-    };
-
-
-    document.getElementById("forgot").onclick = function(event) {
-
-        event.preventDefault();
-
-        message.textContent =
-            "يمكن إضافة صفحة استعادة كلمة المرور هنا.";
-
-    };
 
 </script>
 
