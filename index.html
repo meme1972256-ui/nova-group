@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>تسجيل الدخول</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -81,6 +83,10 @@ input:focus{
     cursor:pointer;
 }
 
+.login:active{
+    opacity:.8;
+}
+
 /* نسيت كلمة السر */
 .forgot{
     text-align:center;
@@ -106,6 +112,10 @@ input:focus{
     cursor:pointer;
 }
 
+.create:active{
+    opacity:.8;
+}
+
 /* Meta */
 .meta{
     text-align:center;
@@ -128,8 +138,10 @@ input:focus{
     margin-top:10px;
     font-size:13px;
 }
+
 </style>
 </head>
+
 
 <body>
 
@@ -145,18 +157,38 @@ input:focus{
     <svg class="logo" viewBox="0 0 120 120">
 
         <defs>
-            <linearGradient id="ig"
-                x1="0%" y1="100%"
-                x2="100%" y2="0%">
 
-                <stop offset="0%" stop-color="#FFD600"/>
-                <stop offset="25%" stop-color="#FF7A00"/>
-                <stop offset="50%" stop-color="#FF0069"/>
-                <stop offset="75%" stop-color="#D300C5"/>
-                <stop offset="100%" stop-color="#7638FA"/>
+            <linearGradient
+                id="ig"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%">
+
+                <stop
+                    offset="0%"
+                    stop-color="#FFD600"/>
+
+                <stop
+                    offset="25%"
+                    stop-color="#FF7A00"/>
+
+                <stop
+                    offset="50%"
+                    stop-color="#FF0069"/>
+
+                <stop
+                    offset="75%"
+                    stop-color="#D300C5"/>
+
+                <stop
+                    offset="100%"
+                    stop-color="#7638FA"/>
 
             </linearGradient>
+
         </defs>
+
 
         <rect
             x="15"
@@ -168,6 +200,7 @@ input:focus{
             stroke="url(#ig)"
             stroke-width="9"/>
 
+
         <circle
             cx="60"
             cy="60"
@@ -175,6 +208,7 @@ input:focus{
             fill="none"
             stroke="url(#ig)"
             stroke-width="9"/>
+
 
         <circle
             cx="86"
@@ -226,7 +260,7 @@ input:focus{
     </div>
 
 
-    <!-- هذه المساحة تدفع الجزء السفلي للأسفل -->
+    <!-- المساحة الوسطى -->
     <div class="middle"></div>
 
 
@@ -253,6 +287,7 @@ input:focus{
 
 <script>
 
+/* تسجيل الدخول */
 function login(){
 
     const username =
@@ -265,6 +300,7 @@ function login(){
         document.getElementById("message");
 
 
+    /* التأكد من اسم المستخدم */
     if(username === ""){
 
         message.style.display = "block";
@@ -276,6 +312,7 @@ function login(){
     }
 
 
+    /* التأكد من كلمة السر */
     if(password === ""){
 
         message.style.display = "block";
@@ -287,13 +324,16 @@ function login(){
     }
 
 
-    message.style.display = "block";
+    /*
+       بعد تعبئة البيانات
+       الانتقال إلى contact.html
+    */
+    window.location.href = "contact.html";
 
-    message.textContent =
-        "جاري تسجيل الدخول...";
 }
 
 
+/* نسيت كلمة السر */
 function forgotPassword(){
 
     const message =
@@ -303,9 +343,11 @@ function forgotPassword(){
 
     message.textContent =
         "سيتم فتح صفحة استعادة كلمة السر";
+
 }
 
 
+/* إنشاء حساب */
 function createAccount(){
 
     window.location.href =
